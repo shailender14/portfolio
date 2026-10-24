@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/showcase", "destination": "/portfolio_showcase.html" },
+    { "source": "/scraper", "destination": "/b2b_lead_scraper.html" },
+    { "source": "/resume", "destination": "/Shailender_Pushkar_Venxr_PMA_Resume.pdf" }
+  ]
+}

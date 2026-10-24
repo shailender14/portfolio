@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shailender Pushkar • AI-Native Product Builder & Vibe Coder Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.15);
+    }
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.18) 0%, transparent 65%);
+    }
+    .badge-vibe {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    .tree-box {
+      background: #030712;
+      border: 1px solid #1f2937;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: #34d399;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    @media print {
+      header, footer, .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .glass-card, .tree-box { border: 1px solid #ccc !important; background: white !important; color: black !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 antialiased font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- Glow Effect -->
+  <div class="fixed top-0 left-0 w-full h-[600px] glow-bg pointer-events-none z-0"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/80 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-center space-x-3.5">
+        <!-- User Cropped Photo Avatar -->
+        <img src="profile_photo.jpg" alt="Shailender Pushkar" class="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-md shadow-indigo-500/25 ring-2 ring-indigo-500/20" />
+        <div>
+          <span class="font-bold text-white text-base tracking-tight block">Shailender Pushkar</span>
+          <span class="text-xs text-indigo-400 font-mono flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Pune, India (On-Site Ready)
+          </span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <a href="#showcase-dossier" class="text-xs sm:text-sm px-3 py-1.5 rounded-lg bg-purple-900/40 hover:bg-purple-800/60 text-purple-200 border border-purple-500/40 font-medium transition flex items-center gap-1.5">
+          <span>📑</span> <span class="hidden sm:inline">Showcase Dossier</span><span class="sm:hidden">Dossier</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shailender-pushkar-4b7586231/" target="_blank" class="text-xs sm:text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">LinkedIn</a>
+        <a href="https://github.com/shailender14" target="_blank" class="text-xs sm:text-sm px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">GitHub</a>
+        <a href="Shailender_Pushkar_Venxr_PMA_Resume.pdf" target="_blank" class="text-xs sm:text-sm px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium shadow-md shadow-indigo-500/25 transition">Resume (PDF)</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-20">
+    <div class="text-center max-w-3xl mx-auto space-y-5">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-vibe text-xs font-medium text-purple-300">
+        <span class="text-purple-400">⚡</span> Product Management Associate & Vibe Coder
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+        AI-Native Product Builder & <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400">Vibe Coder</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
+        Incubated at <strong class="text-slate-200">AIC-BHU</strong>. I translate complex business requirements into interactive product specifications, user stories, and production-grade prototypes at 10x velocity using modern AI orchestration and Vibe Coding.
+      </p>
+
+      <!-- Dual Call to Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="#projects" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-md shadow-indigo-500/25 transition">
+          Explore 7 Live Projects ↓
+        </a>
+        <a href="#showcase-dossier" class="px-5 py-2.5 rounded-xl bg-purple-950/70 hover:bg-purple-900/80 text-purple-200 border border-purple-500/40 font-semibold text-sm transition flex items-center gap-2 shadow-lg shadow-purple-950/40">
+          <span>📑</span> Read Master Showcase Dossier ↓
+        </a>
+      </div>
+
+      <!-- Metric Badges -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 pb-2">
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-2xl font-bold text-white font-mono">7</div>
+          <div class="text-xs text-slate-400 mt-1">Live Digital Products</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-2xl font-bold text-indigo-400 font-mono">0-to-1</div>
+          <div class="text-xs text-slate-400 mt-1">Product Ownership</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-2xl font-bold text-purple-400 font-mono">AIC-BHU</div>
+          <div class="text-xs text-slate-400 mt-1">Incubated Venture</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div class="text-2xl font-bold text-emerald-400 font-mono">10x</div>
+          <div class="text-xs text-slate-400 mt-1">Vibe Coding Speed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED SHOWCASE DOCUMENT BANNER -->
+    <div class="mt-14 rounded-2xl p-6 sm:p-7 bg-gradient-to-r from-purple-950/60 via-slate-900 to-indigo-950/50 border border-purple-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-purple-950/20">
+      <div class="space-y-2 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-mono font-medium">
+          📑 TECHNICAL ARCHITECTURAL DOSSIER (EMBEDDED BELOW)
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">The Vibe Coder Portfolio: 7 Multi-Platform Case Studies</h3>
+        <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
+          The complete architectural showcase is embedded directly on this page below. It covers monorepo trees, system architectures, database schemas, and live metrics for all 7 products.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        <a href="#showcase-dossier" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs sm:text-sm transition flex items-center gap-1.5 shadow-md shadow-indigo-500/25">
+          <span>Jump to Dossier Below ↓</span>
+        </a>
+        <a href="portfolio_showcase.html" target="_blank" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-semibold text-xs sm:text-sm transition flex items-center gap-1.5">
+          <span>Open Standalone Tab ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Live Projects Grid (ALL 7 PRODUCTS) -->
+    <div id="projects" class="mt-16 space-y-8">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">Live Production & Vibe Coded Products (7)</h2>
+          <p class="text-sm text-slate-400 mt-1">Explore live web applications, real-time CRMs, and interactive Stitch UI prototypes.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- 1. WooFie / PawSpace -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400 font-mono">Petcare Super-App • Production MVP</span>
+                <h3 class="text-xl font-bold text-white mt-1">WooFie (PawSpace)</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">Live Web App</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Complete petcare ecosystem with a locked 5-tone design system. Features <strong>Digital Pet ID</strong> (Lost & Found QR scan vs private medical profile), <strong>Pawport</strong> travel compliance engine with vet 4-digit verification, and live GPS walking pins.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Next.js 14</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Tailwind CSS</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Firebase</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Stitch SDK</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Playwright E2E</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="https://pawspace-india.netlify.app/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>Visit Live Web App</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1-Qrj7Wn3pCKDB1nHQnwVQ2bROhFW2_lZ" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+              <span>Stitch UI Prototypes (Drive)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. FOMINS B2B CRM -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-purple-400 font-mono">B2B SaaS • Sales Pipeline</span>
+                <h3 class="text-xl font-bold text-white mt-1">FOMINS B2B Outreach CRM</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">Live Portal</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Custom real-time corporate catering sales CRM. Features interactive 6-stage Kanban board, Google Calendar meeting scheduler, specialized Corporate Food Tasting Session booking modal, and Excel lead ingestion.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Next.js 14 App Router</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Cloud Firestore</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Google APIs</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="https://crm.fomins.co.in/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>Open Live CRM</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <a href="#project-2-crm" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+              <span>View Architecture Tree ↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. FOMINS Foodtech Monorepo -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-amber-400 font-mono">Foodtech Monorepo • Multi-App Architecture</span>
+                <h3 class="text-xl font-bold text-white mt-1">FOMINS Foodtech Monorepo</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-medium">Customer + Rider + KDS</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Synchronized monorepo ecosystem powering <strong>customer food ordering</strong> (React Native Expo), <strong>fleet courier dispatch</strong> (rider app), and high-contrast tablet <strong>Kitchen Display System</strong> (Next.js KDS) sharing unified Firestore schemas and UI tokens.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">React Native (Expo)</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Next.js KDS Admin</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Turborepo</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Shared Firebase SDK</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="#project-1-monorepo" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>Read Monorepo Breakdown ↓</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. FOMINS Official Website -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-pink-400 font-mono">Workplace Dining • Customer Storefront</span>
+                <h3 class="text-xl font-bold text-white mt-1">FOMINS Official Platform</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">Live Website</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              High-utility food-tech portal built strictly on the Google Stitch Design Standard. Features live delivery radius mapping via Google Maps API, dynamic cafeteria menu explorer, and instant PDF corporate quotation generator.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">React 18</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">TypeScript</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Google Maps API</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">jsPDF</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Framer Motion</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="https://www.fomins.co.in/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>Visit fomins.co.in</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. House of Mandana -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-rose-400 font-mono">Luxury D2C • E-Commerce</span>
+                <h3 class="text-xl font-bold text-white mt-1">House of Mandana</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">Live Store</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Luxury artisanal home decor brand benchmarked against <em>Vaaree</em>. Engineered custom Shopify liquid sections (13 bespoke homepage modules), custom sliding cart drawer, and high-AOV Collections SEO master hierarchy.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Shopify Liquid</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Modular JS/CSS</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Agentic SEO</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Python Catalog Engine</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="https://houseofmandana.in/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>Visit houseofmandana.in</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. FOMINS Mobile Food App Stitch UI -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400 font-mono">Mobile App UI • Google Stitch Standard</span>
+                <h3 class="text-xl font-bold text-white mt-1">FOMINS Mobile Food App (Stitch UI)</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-medium">Stitch UI Prototype</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Swiggy/EatSure-tier mobile food ordering experience designed and spec'd via Google Stitch standard. Includes interactive screens for cafeteria browsing, localized meal passes, and real-time delivery rider tracking.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Google Stitch SDK</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Mobile UI Wireframes</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Flutter Architecture</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">User Flow Mapping</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="https://drive.google.com/drive/folders/1YORJlyWmSWfnUP_vBNEgL_JQ3EpbQwgD" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>View Stitch Mobile Prototypes (Drive)</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Leads & OSINT Scraper -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between md:col-span-2">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 font-mono">Python OSINT • Zero-Cost Lead Gen</span>
+                <h3 class="text-xl font-bold text-white mt-1">B2B Lead Scraper & SMTP Socket Handshake Engine</h3>
+              </div>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">Production Engine</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Targeted IT corridors in Pune (Hinjewadi, Magarpatta, Kharadi) to scrape 1,000+ HR and Facility decision-maker profiles. Features live socket-level <strong>Port 25 SMTP handshakes</strong> to verify mail delivery without sending emails, and Gemini AI for data deduplication.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Python 3</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Gemini GenAI API</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">SMTP Sockets (Port 25)</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">SQLite</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Pandas</span>
+            </div>
+          </div>
+          <div class="pt-6 flex flex-wrap items-center gap-3 border-t border-slate-800/80 mt-6">
+            <a href="b2b_lead_scraper.html" class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition">
+              <span>View Engine Architecture & Code Breakdown</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <a href="#project-4-scraper" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+              <span>Read in Showcase Dossier ↓</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- MASTER ARCHITECTURAL SHOWCASE & TECHNICAL DOSSIER SECTION -->
+    <!-- ======================================================== -->
+    <section id="showcase-dossier" class="mt-24 pt-12 border-t border-slate-800/80 space-y-12">
+      
+      <!-- Section Header & Toolbar -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-800">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30 text-xs font-mono font-medium">
+            📑 COMPLETE ARCHITECTURAL DOSSIER
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            The Vibe Coder Portfolio: 7 Multi-Platform Case Studies
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base max-w-3xl">
+            Detailed technical breakdown, monorepo file trees, database schemas, problem statements, and real-world metrics for every vibe-coded system.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 shrink-0 no-print">
+          <button onclick="window.print()" class="text-xs px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition flex items-center gap-1.5">
+            <span>🖨️</span> Print / Save PDF
+          </button>
+          <a href="portfolio_showcase.html" target="_blank" class="text-xs px-3.5 py-2 rounded-lg bg-purple-900/40 hover:bg-purple-800/60 text-purple-200 border border-purple-500/40 font-medium transition flex items-center gap-1.5">
+            <span>↗</span> Standalone Page
+          </a>
+          <a href="VIBE_CODING_PORTFOLIO_SHOWCASE.md" target="_blank" class="text-xs px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-medium transition">
+            Markdown Source
+          </a>
+        </div>
+      </div>
+
+      <!-- Executive Overview Card -->
+      <div class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-4">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+          <span>⚡</span> Executive Overview: The Power of Vibe Coding
+        </h3>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          In early-stage ventures, speed of execution is the ultimate moat. Traditional software development cycles—involving weeks of ticket grooming, bloated engineering teams, and slow feature velocity—burn critical capital before achieving product-market fit.
+        </p>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <strong>Vibe Coding</strong> is the modern paradigm of software engineering: combining domain expertise, product architecture, and user journey mapping with high-speed AI orchestration (Antigravity IDE, Google GenAI SDK, Claude, Stitch API). 
+        </p>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Without relying on external dev agencies or hiring a multi-person dev team, I single-handedly architected, coded, tested, and deployed <strong>7 production-grade digital products</strong> spanning Mobile Apps, Real-time CRMs, Foodtech Monorepos, OSINT Scrapers, and Luxury E-Commerce.
+        </p>
+      </div>
+
+      <!-- Master Verification Directory Table -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+          <span>🌐</span> Live Product Access & Verification Directory
+        </h3>
+        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-800/80 text-xs font-mono uppercase text-slate-300 border-b border-slate-700">
+              <tr>
+                <th class="py-3 px-4">Project Name</th>
+                <th class="py-3 px-4">Category</th>
+                <th class="py-3 px-4">Primary Live Link</th>
+                <th class="py-3 px-4">Supporting Assets</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-300">
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">1. WooFie (PawSpace)</td>
+                <td class="py-3 px-4">Petcare Super-App & Digital ID</td>
+                <td class="py-3 px-4"><a href="https://pawspace-india.netlify.app/" target="_blank" class="text-indigo-400 hover:underline">pawspace-india.netlify.app ↗</a></td>
+                <td class="py-3 px-4"><a href="https://drive.google.com/drive/folders/1-Qrj7Wn3pCKDB1nHQnwVQ2bROhFW2_lZ" target="_blank" class="text-slate-400 hover:text-white">Stitch UI Designs (Drive) ↗</a></td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">2. FOMINS B2B CRM</td>
+                <td class="py-3 px-4">Enterprise Sales Pipeline</td>
+                <td class="py-3 px-4"><a href="https://crm.fomins.co.in/" target="_blank" class="text-indigo-400 hover:underline">crm.fomins.co.in ↗</a></td>
+                <td class="py-3 px-4"><a href="https://github.com/shailender14" target="_blank" class="text-slate-400 hover:text-white">GitHub Repo ↗</a></td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">3. FOMINS Foodtech Monorepo</td>
+                <td class="py-3 px-4">Customer + Rider + KDS Admin</td>
+                <td class="py-3 px-4"><a href="#project-1-monorepo" class="text-indigo-400 hover:underline">Monorepo Codebase ↓</a></td>
+                <td class="py-3 px-4"><span class="text-slate-400">React Native + Next.js KDS</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">4. FOMINS Platform</td>
+                <td class="py-3 px-4">Corporate Dining Storefront</td>
+                <td class="py-3 px-4"><a href="https://www.fomins.co.in/" target="_blank" class="text-indigo-400 hover:underline">www.fomins.co.in ↗</a></td>
+                <td class="py-3 px-4"><span class="text-slate-400">Google Stitch UI Standard</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">5. House of Mandana</td>
+                <td class="py-3 px-4">Luxury D2C E-Commerce</td>
+                <td class="py-3 px-4"><a href="https://houseofmandana.in/" target="_blank" class="text-indigo-400 hover:underline">houseofmandana.in ↗</a></td>
+                <td class="py-3 px-4"><span class="text-slate-400">Benchmarked vs Vaaree</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">6. FOMINS Mobile Food App</td>
+                <td class="py-3 px-4">Mobile Foodtech UI Prototypes</td>
+                <td class="py-3 px-4"><a href="https://drive.google.com/drive/folders/1YORJlyWmSWfnUP_vBNEgL_JQ3EpbQwgD" target="_blank" class="text-indigo-400 hover:underline">Stitch Mobile UI (Drive) ↗</a></td>
+                <td class="py-3 px-4"><span class="text-slate-400">Google Stitch Mobile Flows</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">7. B2B OSINT Lead Scraper</td>
+                <td class="py-3 px-4">Python Data & SMTP Engine</td>
+                <td class="py-3 px-4"><a href="b2b_lead_scraper.html" class="text-indigo-400 hover:underline">Engine Architecture Page ↗</a></td>
+                <td class="py-3 px-4"><span class="text-slate-400">Port 25 SMTP Socket Handshake</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- DETAILED CASE STUDIES (1 TO 7) -->
+      <div class="space-y-12 pt-4">
+
+        <!-- Case Study 1: FOMINS Monorepo -->
+        <div id="project-1-monorepo" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-indigo-400 font-semibold">Case Study 1 • Monorepo Architecture</span>
+              <h3 class="text-2xl font-bold text-white mt-1">🍕 FOMINS Foodtech Ecosystem (Customer, Rider & KDS)</h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-mono">React Native + Next.js</span>
+          </div>
+
+          <div class="tree-box">
+fomis-foodtech/
+├── apps/
+│   ├── customer-app/          # Native React Native (Expo) - Swiggy/EatSure/Swish Tier UI
+│   ├── rider-app/             # Native React Native (Expo) - Fleet Partner App (Play Store Ready)
+│   └── web-kds-admin/         # Next.js App Router - Tablet Kitchen Display System & Super Admin
+└── packages/
+    ├── shared-firebase/       # Centralized Firebase SDK, Firestore rules, schemas & shared hooks
+    └── ui-tokens/             # Design tokens, color palettes (#E53E3E, #2D3748), typography
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Urban professionals and corporate employees face a sharp tradeoff between speed (quick commerce snacks) and meal quality (fresh culinary dining). FOMINS bridges this gap by integrating a multi-brand cloud kitchen with a unified digital ecosystem.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Technical Implementation</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Monorepo Design:</strong> Built using a synchronized monorepo pattern where customer ordering, kitchen dispatch, and fleet delivery share identical TypeScript interfaces and Firestore schemas.</li>
+                <li><strong>Customer App:</strong> Animated food category rails, dish customization, and real-time tracking.</li>
+                <li><strong>Kitchen Display System (KDS):</strong> High-contrast tablet interface for chefs to mark prep milestones (Queued ➔ Cooking ➔ Ready ➔ Dispatched).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2: FOMINS B2B CRM -->
+        <div id="project-2-crm" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-purple-400 font-semibold">Case Study 2 • Enterprise SaaS</span>
+              <h3 class="text-2xl font-bold text-white mt-1">📊 FOMINS B2B Outreach CRM & Sales Pipeline</h3>
+            </div>
+            <a href="https://crm.fomins.co.in/" target="_blank" class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono hover:bg-emerald-500/20 transition">
+              Live at crm.fomins.co.in ↗
+            </a>
+          </div>
+
+          <div class="tree-box">
+fomins-b2b-crm/
+├── app/                       # Next.js 14 App Router (leads, pipeline, analytics)
+├── components/                # Modular enterprise UI
+│   ├── KanbanBoard.tsx        # Multi-stage drag-and-drop deal board
+│   ├── TableView.tsx          # High-density searchable enterprise data grid
+│   ├── TastingModal.tsx       # Corporate food tasting session scheduler
+│   ├── ScheduleMeetingModal.tsx # Google Calendar scheduling integration
+│   ├── AddLeadModal.tsx       # Context-aware lead entry modal
+│   ├── LeadDetailModal.tsx    # Complete corporate intelligence overview
+│   ├── ExcelUploader.tsx      # Bulk lead parsing and validation engine
+│   └── AnalyticsBar.tsx       # Live deal volume & pipeline conversion velocity
+└── server_engine/             # Backend automation and lead validation routines
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Selling corporate catering, daily cafeteria meal passes, and bulk lunch subscriptions requires a specialized sales pipeline that standard CRMs cannot handle—specifically corporate tasting sessions, menu preference negotiations, and headcount-based meal quotas.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Key Features & Architecture</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Real-time Pipeline:</strong> Built on Next.js 14 App Router, Tailwind CSS, and Cloud Firestore for zero-latency multi-user sync.</li>
+                <li><strong>Interactive Kanban:</strong> 6-stage drag-and-drop deal board from <em>New Lead</em> to <em>Tasting Scheduled</em> to <em>Won/Active</em>.</li>
+                <li><strong>Specialized Modals:</strong> Tasting session scheduler, Google Calendar API integration, and Excel lead ingestion engine.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 3: FOMINS Mobile Food App Stitch UI -->
+        <div id="project-3-mobile" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-cyan-400 font-semibold">Case Study 3 • Mobile Design Specs</span>
+              <h3 class="text-2xl font-bold text-white mt-1">📱 FOMINS Mobile Food App (Google Stitch UI Prototypes)</h3>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1YORJlyWmSWfnUP_vBNEgL_JQ3EpbQwgD" target="_blank" class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-mono hover:bg-cyan-500/20 transition">
+              Open Stitch UI on Drive ↗
+            </a>
+          </div>
+
+          <div class="tree-box">
+stitch_fomins_mobile_food_app/
+├── lib/
+│   ├── core/                  # Design system, themes, API services, routing
+│   ├── data/                  # Firestore data providers, repository pattern
+│   ├── features/              # Cart, cafeteria browsing, live tracking, subscriptions
+│   ├── main.dart              # Customer Mobile Application entrypoint
+│   └── main_rider.dart        # Fleet Courier Partner Application entrypoint
+├── android/                   # Native Gradle, ProGuard, Keystore configurations
+└── Stitch UI Screens/         # Interactive mobile foodtech screens & UI specs
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Designing an intuitive mobile food ordering experience for corporate employees that eliminates ordering friction during peak 1:00 PM lunch hours in Hinjewadi tech parks.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">UX Highlights</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Google Stitch Standard:</strong> Pixel-perfect UI with responsive category rails and instant meal-pass checkouts.</li>
+                <li><strong>Courier Routing:</strong> Turn-by-turn navigation flows and delivery OTP handshakes.</li>
+                <li><strong>Assets:</strong> Accessible via Google Drive showcasing raw Stitch screen assets and design prototypes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 4: B2B Lead Scraper -->
+        <div id="project-4-scraper" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-emerald-400 font-semibold">Case Study 4 • Python OSINT & Socket Engine</span>
+              <h3 class="text-2xl font-bold text-white mt-1">🕵️ Leads: Python B2B Lead Scraper & SMTP Handshake</h3>
+            </div>
+            <a href="b2b_lead_scraper.html" class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono hover:bg-emerald-500/20 transition">
+              Detailed Architecture Page ↗
+            </a>
+          </div>
+
+          <div class="tree-box">
+leads/
+├── b2b_lead_engine.py         # Multi-zone OSINT company & people extraction engine
+├── reverify_existing_leads.py # Port 25 SMTP handshake & Gemini AI entity verifier
+├── fill_missing_company_leads.py # Automated missing contact data enricher
+├── lead_history.db            # Local SQLite database for deduplication and logging
+└── lead_output/               # Structured 5-tier verified corporate database
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Commercial B2B database subscriptions (Apollo, ZoomInfo) cost thousands of dollars annually and carry stale contacts for regional Indian IT corridors. We engineered a proprietary, zero-cost lead pipeline targeting decision-makers (HR Heads, Facility Managers) in Pune IT Parks.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Technical Implementation</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Anti-Bot OSINT Engine:</strong> Extracted company metadata across Hinjewadi Phase 1-3, Magarpatta, and Kharadi EON Free Zone.</li>
+                <li><strong>Live Port 25 SMTP Handshakes:</strong> Connects to MX mailboxes executing <code>HELO ➔ MAIL FROM ➔ RCPT TO</code> to verify mailbox existence <em>without sending actual emails</em>.</li>
+                <li><strong>Gemini GenAI:</strong> Cleaned contact titles and filtered non-decision-makers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 5: FOMINS Workplace Website -->
+        <div id="project-5-website" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-pink-400 font-semibold">Case Study 5 • Web Platform & Quotations</span>
+              <h3 class="text-2xl font-bold text-white mt-1">🌐 FOMINS Workplace Food Solutions Official Platform</h3>
+            </div>
+            <a href="https://www.fomins.co.in/" target="_blank" class="px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20 text-xs font-mono hover:bg-pink-500/20 transition">
+              Live at www.fomins.co.in ↗
+            </a>
+          </div>
+
+          <div class="tree-box">
+FOMINS_Website/
+├── src/
+│   ├── components/            # Hero slider, cafeteria explorer, quote calculator
+│   ├── pages/                 # Corporate catering, meal pass subscriptions, compliance
+│   ├── services/              # Firebase integration & Google Maps API loader
+│   └── data/                  # Catalog dump, pricing matrices, menu tiers
+├── DESIGN.md                  # Comprehensive Google Stitch Standard UI/UX Specification
+└── catalog_audit_report.txt   # Nutritional, allergen, and price audit report
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Corporate decision-makers require a credible, legally compliant, and polished web interface before signing long-term catering or meal-pass agreements.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Key Features</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Google Stitch Design Standard:</strong> High-contrast typography, zero-jank responsive grids, and micro-interactions powered by Framer Motion.</li>
+                <li><strong>Google Maps Radius:</strong> Embedded <code>@googlemaps/js-api-loader</code> for dynamic hub-to-client distance calculations.</li>
+                <li><strong>Instant B2B PDF Proposals:</strong> Integrated <code>html2canvas</code> and <code>jspdf</code> for instant branded quote downloads.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 6: WooFie / PawSpace Super-App -->
+        <div id="project-6-pawspace" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-indigo-400 font-semibold">Case Study 6 • Petcare Ecosystem</span>
+              <h3 class="text-2xl font-bold text-white mt-1">🐾 Milli - PawSpace (WooFie Petcare Super-App)</h3>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="https://pawspace-india.netlify.app/" target="_blank" class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono hover:bg-emerald-500/20 transition">
+                Live App ↗
+              </a>
+              <a href="https://drive.google.com/drive/folders/1-Qrj7Wn3pCKDB1nHQnwVQ2bROhFW2_lZ" target="_blank" class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 text-xs font-mono hover:bg-slate-700 transition">
+                Drive UI ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="tree-box">
+Milli/
+├── src/app/
+│   ├── digital-pet-id/        # Smart QR collar & public/private pet profile engine
+│   ├── pawport/               # Pet air & rail travel compliance verification
+│   ├── services/              # Cage-free boarding, daycare & dog walking tracking
+│   ├── delivery-safety/       # B2B pet delivery safety standard API
+│   ├── wellness/              # Doorstep wellness checkup scheduling
+│   └── portal/                # Customer and host management portal
+├── firestore.rules            # Hardened security rules with role-based access
+├── GEMINI.md                  # Locked 5-tone design system (#2A338D, #95D9EE, #F47645)
+└── playwright.config.ts       # End-to-end automated UI test suite
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Inspired by my published book <em>Millu – She Rescued Us</em>. The Indian petcare sector suffers from cage-based boarding, unaccountable dog-walking, and stressful rail/air pet travel protocols. PawSpace solves this with an ethical, tech-first super-app.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Key Architecture Innovations</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Digital Pet ID:</strong> Dual-view QR profile (public Lost & Found contact vs private veterinary health history).</li>
+                <li><strong>Pawport:</strong> Indian Railways and domestic airline travel compliance with a 4-digit partner vet verification PIN.</li>
+                <li><strong>Cage-Free Care:</strong> 10-point environmental inspection checklist and live GPS dog-walking pins with hydration proofs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 7: House of Mandana -->
+        <div id="project-7-mandana" class="rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-amber-400 font-semibold">Case Study 7 • Luxury D2C & SEO</span>
+              <h3 class="text-2xl font-bold text-white mt-1">👑 House of Mandana: Luxury D2C E-Commerce</h3>
+            </div>
+            <a href="https://houseofmandana.in/" target="_blank" class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono hover:bg-amber-500/20 transition">
+              Live Store at houseofmandana.in ↗
+            </a>
+          </div>
+
+          <div class="tree-box">
+HOUSE OF MANDANA/
+├── custom-liquid-sections/    # 13 bespoke homepage modules in modular Liquid/HTML
+├── design-system/             # Luxury editorial typography & high-AOV color palettes
+├── catalog/                   # 15-product launch photography, weights & dimensions
+├── ACTION-PLAN.md             # High-intent SEO & Collection restructuring playbook
+├── audit-results.json         # Competitive benchmark audit against Vaaree
+└── analyze_weight_mapping.py  # Automated inventory & courier volumetric weight engine
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Problem & Vision</h4>
+              <p class="leading-relaxed">
+                Competing in the luxury home decor and artisan lifestyle space requires elevated editorial aesthetics, fast page load speeds, and strict SEO indexing to capture high-ticket organic buyers without massive ad spend.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white text-base">Key Implementation</h4>
+              <ul class="list-disc pl-5 space-y-1 leading-relaxed">
+                <li><strong>Vaaree Benchmark Audit:</strong> Competitive feature gap analysis on collection filters, mobile ergonomics, and cart upsell mechanics.</li>
+                <li><strong>13 Bespoke Liquid Sections:</strong> High-AOV modular storefront components for Shopify.</li>
+                <li><strong>Collections SEO Architecture:</strong> Restructured collection handles and 301 redirect trees to capture high-intent queries (e.g., "Buddha Zen Decor").</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Core Vibe Coding & Product Competencies Matrix Table -->
+      <div class="mt-12 rounded-2xl p-6 sm:p-8 bg-slate-900/60 border border-slate-800 space-y-4">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+          <span>🎯</span> Core Capabilities & Value Proposition Matrix
+        </h3>
+        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/40">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-800/80 text-xs font-mono uppercase text-slate-300 border-b border-slate-700">
+              <tr>
+                <th class="py-3 px-4 w-1/3">Capability</th>
+                <th class="py-3 px-4">Demonstrated Proof Across Portfolio</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-300">
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">0-to-1 Product Ownership</td>
+                <td class="py-3 px-4">Conceived, architected, and shipped 7 distinct digital systems from scratch, defining PRDs, workflows, and acceptance criteria.</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">Modern AI Orchestration</td>
+                <td class="py-3 px-4">Harnessed Claude, Antigravity IDE, Google GenAI SDK, and Stitch API to prototype and ship production features at 10x velocity.</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">Full-Stack Versatility</td>
+                <td class="py-3 px-4">Hands-on across React Native, Next.js, Cloud Firestore, Python socket programming, and Shopify Liquid.</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-3 px-4 font-semibold text-white">Ground-Level Business Acumen</td>
+                <td class="py-3 px-4">Grounded in real-world startup execution: commercial kitchen P&L, AIC-BHU incubation, and B2B enterprise sales pipelines in Pune.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Contact & Pitch Banner -->
+    <div class="mt-20 rounded-3xl p-8 sm:p-10 bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-slate-900 border border-indigo-500/30 text-center space-y-6">
+      <h3 class="text-2xl sm:text-3xl font-bold text-white">Looking for an AI-Native Product Associate?</h3>
+      <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        Based in <strong>Pune, India</strong>. I can walk into your office tomorrow and demonstrate working prototypes, PRD workflows, and Vibe Coding architecture in person.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a href="mailto:shailenderofficial01@gmail.com" class="px-6 py-3 rounded-xl bg-white text-slate-900 font-bold text-sm hover:bg-slate-100 transition shadow-lg">
+          Email: shailenderofficial01@gmail.com
+        </a>
+        <a href="tel:+917376159577" class="px-6 py-3 rounded-xl bg-slate-800 text-white font-semibold text-sm border border-slate-700 hover:bg-slate-700 transition">
+          Call: +91 7376159577
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4">
+      Designed & Vibe Coded by Shailender Pushkar • Incubated at AIC-BHU • Pune, Maharashtra, India • © 2026
+    </div>
+  </footer>
+
+</body>
+</html>

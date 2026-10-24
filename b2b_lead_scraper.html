@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Lead Engine & Socket SMTP Verifier • Technical Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #cbd5e1; }
+    pre, code { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="p-4 sm:p-8 max-w-5xl mx-auto">
+  
+  <header class="flex items-center justify-between pb-6 border-b border-slate-800">
+    <div class="flex items-center gap-3">
+      <a href="portfolio.html" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+        ← Back to Portfolio
+      </a>
+      <span class="text-xs font-mono text-purple-400">ENGINE ARCHITECTURE</span>
+    </div>
+    <div class="text-xs font-mono text-slate-500">Shailender Pushkar • Pune, India</div>
+  </header>
+
+  <main class="mt-8 space-y-8">
+    <div>
+      <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono mb-3">
+        Zero-Cost OSINT Lead Generation & Deliverability Pipeline
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        B2B Lead Generation & Port 25 SMTP Handshake Engine
+      </h1>
+      <p class="mt-3 text-slate-400 max-w-3xl leading-relaxed">
+        Engineered specifically for Pune IT corridors (Hinjewadi Phase 1–3, Magarpatta Cybercity, Kharadi EON Free Zone) to target HR Heads, Facility Managers, and Administration Leads without recurring Apollo/ZoomInfo subscription fees.
+      </p>
+    </div>
+
+    <!-- Key Technical Pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+        <div class="text-sm font-bold text-white mb-1">1. Multi-Zone OSINT Scraping</div>
+        <p class="text-xs text-slate-400 leading-relaxed">Automated search dorking and department gating to filter out low-intent profiles and capture verified decision-makers.</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+        <div class="text-sm font-bold text-white mb-1">2. Port 25 Socket SMTP Handshake</div>
+        <p class="text-xs text-slate-400 leading-relaxed">Direct socket verification testing recipient MX mailboxes using HELO/MAIL FROM/RCPT TO without sending actual emails.</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+        <div class="text-sm font-bold text-white mb-1">3. Gemini GenAI Sanitization</div>
+        <p class="text-xs text-slate-400 leading-relaxed">Entity disambiguation, missing company domain synthesis, and automated duplicate resolution via Google GenAI SDK.</p>
+      </div>
+    </div>
+
+    <!-- Output Architecture Tree -->
+    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+      <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono mb-4 text-indigo-400">
+        Directory Architecture & Output Structure (lead_output/)
+      </h3>
+      <pre class="bg-black/60 p-4 rounded-xl text-xs text-emerald-400 overflow-x-auto border border-slate-800 leading-relaxed">
+lead_output/
+├── 00_Master_Companies/
+│   └── master_companies_directory.csv       # Unified directory of verified Pune tech entities
+├── 01_HR_People/
+│   └── hr_people_verified_leads.csv         # Chief People Officers, HR Directors & Talent Heads
+├── 02_Admin_Procurement_Operations/
+│   └── corporate_admin_procurement.csv      # Facility Managers, Admin Leads, Catering Procurement
+├── 03_C_Suite_Leadership/
+│   └── c_suite_founders_directors.csv       # MDs, CEOs & VP of Operations
+└── 04_All_Employees/
+    └── full_deduplicated_export.csv         # Consolidated enterprise pipeline ready for CRM import
+      </pre>
+    </div>
+
+    <!-- Code Showcase Section -->
+    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
+      <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono text-purple-400">
+        Core Deliverability Verification Algorithm (reverify_existing_leads.py)
+      </h3>
+      <pre class="bg-black/60 p-4 rounded-xl text-xs text-slate-300 overflow-x-auto border border-slate-800 leading-relaxed">
+<span class="text-slate-500"># Direct Port 25 Socket SMTP Handshake Sequence</span>
+<span class="text-purple-400">def</span> <span class="text-blue-400">verify_email_smtp</span>(email, mx_host):
+    <span class="text-purple-400">try</span>:
+        server = smtplib.SMTP(timeout=10)
+        server.connect(mx_host, 25)
+        server.helo(<span class="text-amber-300">"fomins.co.in"</span>)
+        server.mail(<span class="text-amber-300">"verify@fomins.co.in"</span>)
+        code, message = server.rcpt(email)
+        server.quit()
+        <span class="text-slate-500"># 250 OK indicates mailbox is active and deliverable</span>
+        <span class="text-purple-400">return</span> code == 250
+    <span class="text-purple-400">except</span> Exception <span class="text-purple-400">as</span> e:
+        <span class="text-purple-400">return</span> <span class="text-red-400">False</span>
+      </pre>
+    </div>
+
+    <div class="pt-4 text-center">
+      <a href="portfolio.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition">
+        <span>← Return to Master Portfolio</span>
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>

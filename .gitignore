@@ -1,0 +1,9 @@
+# Preview & Test Screenshots
+*.png
+!preview.png
+
+# System & Cache
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel/
